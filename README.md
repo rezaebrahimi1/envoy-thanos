@@ -1,0 +1,2 @@
+# Introduction
+The purpose of this document is to explain how thanos querier can connect to a thanos sidecar of a prometheus instance deployed on non-local (remote cluster which thanos is not deployed on there) cluster securely using TLS to get status of that prometheus metrics. Since the request type of thanos querier is GRPC and this protocol can't handle domain names (and use IPs and ports for connecting to thanos sidecar of prometheus instances), envoy is used to rewrite thanos querier request and send that to remote thanos seidecar service.
